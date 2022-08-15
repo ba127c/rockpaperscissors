@@ -22,10 +22,38 @@
     }
 
     function singleRound(playerSelection, computerSelection) {
-        
-
+        playerSelection = playerSelection.toLowerCase();
+        computerSelection = computerSelection.toLowerCase();
+        if (playerSelection == computerSelection) {
+            return "Draw!";
+        }
+        else if (playerSelection == "rock") {
+            if (computerSelection == "paper") {
+                return "You lose! Paper beats Rock";
+            } else if (computerSelection == "scissors") {
+                return "You win! Rock beats Scissors";
+            }
+        } else if (playerSelection == "paper") {
+            if (computerSelection == "scissors") {
+                return "You lose! Scissors beats Paper";
+            } else if (computerSelection == "rock") {
+                return "You win! Rock beats Scissors";
+            }
+        } else if (playerSelection == "scissors") {
+            if (computerSelection == "rock") {
+                return "You lose! Scissors beats Rock";
+            } else if (computerSelection == "paper") {
+                return "You win! Scissors beats Paper";
+            }
+        }
     }
-    console.log(getComputerChoice());
+
+    function game() {
+    }
+    const player = "paper";
+    const computer = getComputerChoice();
+
+    console.log(singleRound(player, computer));
   </script>
 </body>
 </html>
